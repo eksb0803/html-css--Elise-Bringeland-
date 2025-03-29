@@ -17,15 +17,7 @@
     font-family: 'Roboto', sans-serif; 
     padding-left: 5px;
 }
-.gender-text {
-    font-size: 15px;
-    margin-top: 60px;
-    gap: 15px;
-    font-family: 'Roboto', sans-serif; 
-    text-align: left;
-}
-
-.home-text, .gender-text, .search-container {
+.home-text, .search-container {
     display: inline-block;
     margin-right: 20px;
 }
@@ -76,13 +68,28 @@ a:hover {
 
 .icons-container {
     display: flex;
-    gap: 30px;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
     position: absolute;
     right: 50px;
     top: 80px;
 }
 
-.home-text, .gender-text, .search-container {
+@media (max-width: 768px) {
+    .icons-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        position: static;
+        padding: 10px;
+        width: 100%;
+    }
+
+}
+.home-text, .search-container {
     padding: 10px;
 }
 
@@ -105,6 +112,19 @@ main img {
     display: flex; 
     justify-content: center;
     gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+@media (max-width: 768px) {
+    .imagesmenu-container {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .image-item img {
+        width: 100%;
+        max-width: 410px;
+    }
 }
 
 .image-item {
