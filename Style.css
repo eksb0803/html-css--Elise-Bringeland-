@@ -31,9 +31,25 @@
 }
 
 @media (max-width: 600px) {
+    .home-text {
+        font-size: 16px;
+        margin-top: 0; 
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px;
+    }
+
     .search-container {
+        width: 50%;
         max-width: 90%;
-        padding: 8px;
+        padding: 10px;
     }
 
     #search-bar {
@@ -46,6 +62,7 @@
         padding: 8px;
     }
 }
+
 
 a {
     color: black; 
@@ -84,8 +101,8 @@ a:hover {
         gap: 10px;
         flex-wrap: wrap;
         position: static;
-        padding: 10px;
-        width: 100%;
+        padding: 30px;
+
     }
 
 }
@@ -146,29 +163,54 @@ main img {
 footer {
     padding: 20px 0;
 }
+
 .footer-container {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
-    align-items: center; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 50px; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    flex-wrap: wrap;
 }
 
 img[src="images/RainyDays_Logo.png"] {
     width: 200px;
     height: 115px;
 }
+
 .info {
     text-align: center;
     font-size: 16px;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
 }
+
 .support .icon {
     width: 150px;
     height: auto;
 }
-.productmenu-container{
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img[src="images/RainyDays_Logo.png"] {
+        width: 150px;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+
+    .support .icon {
+        width: 100px;
+    }
+}
+
+.productmenu-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,7 +218,23 @@ img[src="images/RainyDays_Logo.png"] {
     margin: 0 auto;
     padding: 10px;
     gap: 10px;
+    flex-wrap: nowrap;
 }
+
+.icon {
+    margin: 0; 
+    padding: 0;
+    display: block; 
+}
+
+@media (max-width: 768px) {
+    .productmenu-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
 .season h2{
     font-size: 35px; 
     font-weight: bold;
@@ -371,6 +429,73 @@ img[src="images/RainyDays_Logo.png"] {
     margin: 5px 0;
 }
 
+@media (max-width: 768px) {
+    .jacket-row {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .jacket-row {
+        display: none;
+    }
+
+    .big-image-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .big-image-text img {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+
+.Checkout-items-container {
+    display: flex;             
+    align-items: flex-start;
+    gap: 300px;
+    margin-left: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Checkout-items-container img {
+    width: 300px; 
+    height: 400px;
+    object-fit: cover;  
+}
+
+.checkout-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    gap: 20px;
+}
+
+.total-price {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.secondary-line {
+    width: 50%;
+    height: 2px;  
+    background-color: #E67E22;  
+    margin: 5px 0;
+}
+
 .checkout {
     background-color: #E67E22;
     color: rgb(0, 0, 0);
@@ -420,6 +545,31 @@ img[src="images/RainyDays_Logo.png"] {
 .card-details div {
     flex: 1;
 }
+@media (max-width: 768px) {
+    .Checkout-items-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        gap: 10px;
+    }
+
+    .checkout-details {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        padding-bottom: 80px;
+    }
+
+    .checkout {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+}
+
 .checkout-products-container {
     display: flex;
     flex-direction: row;
@@ -463,21 +613,40 @@ img[src="images/RainyDays_Logo.png"] {
 }
 @media (max-width: 600px) {
     .checkout-products-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .text {
-        align-items: center;
-    }
-
-    .button-container {
-        align-items: center;
+        text-align: center;
     }
 
     .checkout-products-container img {
-        width: 300px;
-        height: 400px;
+        order: -1;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
         object-fit: cover;
+        margin-left: 0;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: -15px;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .season h2 {
+        margin-left: 20px;
     }
 }
